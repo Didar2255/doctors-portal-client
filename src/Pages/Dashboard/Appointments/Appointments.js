@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Appointments = ({ date }) => {
     const { user, token } = useAuth()
@@ -58,7 +59,10 @@ const Appointments = ({ date }) => {
                                 </TableCell>
                                 <TableCell align="right">{appointment.serviceName}</TableCell>
                                 <TableCell align="right">{appointment.time}</TableCell>
-
+                                <TableCell align="right">{appointment.payment ?
+                                    'paid' :
+                                    <Link to={`/dashboard/payment/${appointment._id}`}><button>Pay</button></Link>
+                                }</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

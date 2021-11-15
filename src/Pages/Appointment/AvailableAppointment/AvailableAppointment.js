@@ -5,12 +5,48 @@ import Grid from '@mui/material/Grid';
 import Booking from '../Booking/Booking';
 
 const booking = [
-    { id: 1, name: 'Teeth Orthodontics', time: '8:00 AM - 9:00 AM', spaces: 10 },
-    { id: 2, name: 'Cosmetic Dentistry', time: '9:05 AM - 10:30 AM', spaces: 10 },
-    { id: 3, name: 'Teeth Cleaning', time: '11:00 AM - 12:00 PM', spaces: 10 },
-    { id: 4, name: 'Cavity Protection', time: '3:00 PM - 4:00 AM', spaces: 10 },
-    { id: 5, name: 'Oral Dental', time: '4:10 PM - 5:30 PM', spaces: 10 },
-    { id: 6, name: 'Teeth Surgery', time: '6:00 PM - 8:00 PM', spaces: 10 },
+    {
+        id: 1,
+        name: 'Teeth Orthodontics',
+        time: '8:00 AM - 9:00 AM',
+        price: 30,
+        spaces: 10
+    },
+    {
+        id: 2,
+        name: 'Cosmetic Dentistry',
+        time: '9:05 AM - 10:30 AM',
+        price: 20,
+        spaces: 10
+    },
+    {
+        id: 3,
+        name: 'Teeth Cleaning',
+        time: '11:00 AM - 12:00 PM',
+        price: 25,
+        spaces: 10
+    },
+    {
+        id: 4,
+        name: 'Cavity Protection',
+        time: '3:00 PM - 4:00 AM',
+        price: 40,
+        spaces: 10
+    },
+    {
+        id: 5,
+        name: 'Oral Dental',
+        time: '4:10 PM - 5:30 PM',
+        price: 50,
+        spaces: 10
+    },
+    {
+        id: 6,
+        name: 'Teeth Surgery',
+        time: '6:00 PM - 8:00 PM',
+        price: 35,
+        spaces: 10
+    },
 ]
 
 const AvailableAppointment = ({ date }) => {

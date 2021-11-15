@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import BookingModal from '../BookingModal/BookingModal';
 
 const Booking = ({ timeSlot, date, setBookingSuccess }) => {
-    const { name, time, spaces } = timeSlot;
+    const { name, time, spaces, price } = timeSlot;
     const [bookingOpen, setBookingOpen] = React.useState(false);
     const handleBookingOpen = () => setBookingOpen(true);
     const handleBookingClose = () => setBookingOpen(false);
@@ -17,6 +17,9 @@ const Booking = ({ timeSlot, date, setBookingSuccess }) => {
                     </Typography>
                     <Typography variant="body1" gutterBottom component='div' sx={{ fontWeight: 'bold' }}>
                         {time}
+                    </Typography>
+                    <Typography variant="body1" gutterBottom component='div' sx={{ fontWeight: 'bold' }}>
+                        Service Price : ${price}
                     </Typography>
                     <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 'bold', my: 1 }} component='div' >
                         {spaces} SPACES AVAILABLE

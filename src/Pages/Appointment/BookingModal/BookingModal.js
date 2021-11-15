@@ -22,7 +22,7 @@ const style = {
 
 const BookingModal = ({ bookingOpen, handleBookingClose, timeSlot, date, setBookingSuccess }) => {
 
-    const { name, time } = timeSlot;
+    const { name, time, price } = timeSlot;
     const { user } = useAuth()
     const initialInfo = { patientName: user.displayName, patientEmail: user.email, phoneNumber: '' }
     const [bookingInfo, setBookingInfo] = useState(initialInfo)
@@ -32,6 +32,7 @@ const BookingModal = ({ bookingOpen, handleBookingClose, timeSlot, date, setBook
             ...bookingInfo,
             serviceName: name,
             time,
+            price,
             date: date.toLocaleDateString()
         }
         fetch('https://stormy-mesa-33638.herokuapp.com/appointments', {
@@ -90,7 +91,6 @@ const BookingModal = ({ bookingOpen, handleBookingClose, timeSlot, date, setBook
                                 id="outlined-size-small"
                                 name='patientName'
                                 onBlur={handelOnBlur}
-                                placeholder='Your name'
                                 defaultValue={user.displayName}
                                 size="small"
                             />
@@ -101,7 +101,15 @@ const BookingModal = ({ bookingOpen, handleBookingClose, timeSlot, date, setBook
                                 onBlur={handelOnBlur}
                                 type='email'
                                 defaultValue={user.email}
-                                placeholder='Email'
+                                size="small"
+                            />
+                            <TextField
+                                sx={{ width: '100%', m: 1 }}
+                                id="outlined-size-small"
+                                name='price'
+                                onBlur={handelOnBlur}
+                                type='number'
+                                defaultValue={price}
                                 size="small"
                             />
                             <TextField
